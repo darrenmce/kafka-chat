@@ -1,8 +1,8 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import { MessageProducerManager } from '../producer/MessageProducerManager';
+import { MessageProducerManager } from '../lib/MessageProducerManager';
 import { jsonToBuffer } from '../util';
-import { MessageConsumer } from '../consumer/MessageConsumer';
+import * as path from 'path';
 
 type UserId = string;
 
@@ -29,9 +29,6 @@ export function createExpressApp(producers: MessageProducerManager) {
 
   app.use(bodyParser.json({ type: '*/*' }));
 
-  app.set('view engine', 'pug');
-  app.use(express.static('public'));
-
   app.get('/health', (req, res) => {
     res.sendStatus(200);
   });
@@ -47,10 +44,9 @@ export function createExpressApp(producers: MessageProducerManager) {
     res.send(keys);
   });
 
-
-  app.get('/', (req, res) => {
-    res.render('index');
-  });
+  app.use(express.static(path.join(__dirname, '../client/build'), {
+    index: "index.html"
+  }));
 
   return app;
 }

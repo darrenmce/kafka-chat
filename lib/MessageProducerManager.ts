@@ -1,5 +1,5 @@
 import { MessageProducer } from './MessageProducer';
-import { isPromise } from '../util';
+import { isPromise } from '../util/index';
 
 type MessageProducerGetter = Promise<MessageProducer>;
 

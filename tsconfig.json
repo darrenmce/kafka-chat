@@ -23,7 +23,7 @@
   },
   "include": [
     "consumer/index.ts",
-    "producer/MessageProducerManager.ts",
+    "lib/MessageProducerManager.ts",
     "@types/**/*"
   ],
   "exclude": [

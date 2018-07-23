@@ -1,6 +1,6 @@
 {
   "ext": "ts,js",
-  "ignore": [".git", "node_modules", "test"],
+  "ignore": [".git", "node_modules", "test", "client"],
   "execMap": {
     "ts": "ts-node",
     "js": "node"

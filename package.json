@@ -25,11 +25,7 @@
     "@types/node": "^10.5.2",
     "@types/ramda": "^0.25.34",
     "@types/ws": "^5.1.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
     "nodemon": "^1.18.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
     "ts-node": "^7.0.0",
     "typescript": "^2.9.2"
   }
