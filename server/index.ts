@@ -27,6 +27,12 @@ function createMessage(message: MessageInput, meta: MessageMeta): Message {
 export function createExpressApp(producers: MessageProducerManager) {
   const app = express();
 
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
+  
   app.use(bodyParser.json({ type: '*/*' }));
 
   app.get('/health', (req, res) => {
